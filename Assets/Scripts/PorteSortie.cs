@@ -2,15 +2,12 @@ using UnityEngine;
 
 public class PorteSortie : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private void OnTriggerEnter2D(Collider2D autre)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (autre.CompareTag("Player"))
+        {
+            Debug.Log("Le joueur a atteint la sortie !");
+            Destroy(autre.gameObject);
+        }
     }
 }

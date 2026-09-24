@@ -1130,6 +1130,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 862794902075609140, guid: b71ac28fddbe3d34d8776f69bccb3937, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7088838617424740567, guid: b71ac28fddbe3d34d8776f69bccb3937, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.1981134
@@ -2031,7 +2035,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnnemiMobile
   joueur: {fileID: 1844089648}
-  vitesse: 1.5
+  vitesse: 0.7
   distanceMinimale: 0
   degats: 1
   delaiEntreDegats: 1

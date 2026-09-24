@@ -9,9 +9,13 @@ public class EnnemiMobile : MonoBehaviour
     [Header("Movement")]
     [SerializeField] private float vitesse = 2f;
     [SerializeField] private float distanceMinimale = 0.5f;
+    [SerializeField] private int degats = 1;
+    [SerializeField] private float delaiEntreDegats = 1f;
+
 
     private Rigidbody2D corps;
     private SpriteRenderer rendu;
+    private float prochainDegat;
 
     private void Awake()
     {
@@ -53,4 +57,23 @@ public class EnnemiMobile : MonoBehaviour
             rendu.flipX = direction.x < 0;
         }
     }
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (!collision.gameObject.CompareTag("Player"))
+            return;
+
+        if (Time.time < prochainDegat)
+            return;
+
+        prochainDegat = Time.time + delaiEntreDegats;
+
+        PlayerHealth playerHealth =
+            collision.gameObject.GetComponent<PlayerHealth>();
+
+        if (playerHealth != null)
+        {
+            playerHealth.PrendreDegats(degats);
+        }
+    }
+
 }

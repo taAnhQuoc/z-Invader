@@ -14,8 +14,6 @@ public class ZoneInterdite : MonoBehaviour
 
         Debug.Log("Le joueur doit retourner");
 
-
-
     }
  }
 
